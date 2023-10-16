@@ -1,0 +1,15 @@
+name: Node js CI
+run-name: Testing
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/setup-node@v3
+      - run: npm install
+      - run: echo "💡 The dependancies have been installed to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - run: npm run test:unit
+      - run: echo "Test validated"
+      - run: echo "🍏 This job's status is ${{ job.status }}."
